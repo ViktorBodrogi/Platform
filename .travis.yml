@@ -12,6 +12,7 @@ matrix:
   allow_failures:
     - php: "hhvm"
 notifications:
+  slack: hozong:haBs33ICo44odrx7iM01nBvg
 services:
   - "mysql"
   - "postgresql"
