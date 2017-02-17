@@ -4,3 +4,6 @@
 [submodule "lib/tpl/bootstrap3"]
 	path = lib/tpl/bootstrap3
 	url = https://github.com/LotarProject/dokuwiki-template-bootstrap3
+[submodule "lib/plugins/include"]
+	path = lib/plugins/include
+	url = https://github.com/dokufreaks/plugin-include
