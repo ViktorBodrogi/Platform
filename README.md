@@ -12,7 +12,6 @@
 
 ### Branches
 
-
 | Branch  | Status  |
 |---|---|
 | master | [![Build Status master](https://travis-ci.org/ViktorBodrogi/Platform.svg?branch=master)](https://travis-ci.org/ViktorBodrogi/Platform) |
