@@ -1,0 +1,3 @@
+[submodule "dokuwiki"]
+	path = dokuwiki
+	url = https://github.com/ViktorBodrogi/dokuwiki
