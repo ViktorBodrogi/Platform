@@ -3,6 +3,8 @@
 ## Submodules
 
     git submodule add https://github.com/ViktorBodrogi/dokuwiki
+    git submodule add https://github.com/LotarProject/dokuwiki-template-bootstrap3 lib/tpl/bootstrap3
+    git submodule add https://github.com/dokufreaks/plugin-include lib/plugins/include
 
 ## Travis
 
