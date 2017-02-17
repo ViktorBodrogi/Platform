@@ -21,4 +21,7 @@ before_script:
   - sh configure.sh
   - cp dokuwiki/_test/mysql.conf.php.dist dokuwiki/_test/mysql.conf.php
   - cp dokuwiki/_test/pgsql.conf.php.dist dokuwiki/_test/pgsql.conf.php
-script: cd dokuwiki/_test && phpunit --verbose --stderr
+script:
+  - cd dokuwiki/_test
+  - phpunit --verbose --stderr
+  - phpunit --verbose --stderr --group plugins
