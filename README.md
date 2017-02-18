@@ -1,5 +1,7 @@
 # Platform
 
+[![Build Status](https://travis-ci.org/ViktorBodrogi/Platform.svg)](https://travis-ci.org/ViktorBodrogi/Platform)
+
 ## Submodules
 
 ### DokuWiki
@@ -15,14 +17,12 @@
 
 - https://travis-ci.org/ViktorBodrogi
 
-[![Build Status](https://travis-ci.org/ViktorBodrogi/Platform.svg)](https://travis-ci.org/ViktorBodrogi/Platform)
-
 ### Branches
 
 | Branch  | Status  |
 |---|---|
-| ViktorBodrogi/Platform | (https://travis-ci.org/ViktorBodrogi/Platform) |
-| master | [![Build Status master](https://travis-ci.org/ViktorBodrogi/Platform.svg?branch=master)](https://travis-ci.org/ViktorBodrogi/Platform) |
+| Platform | [![Build Status](https://travis-ci.org/ViktorBodrogi/Platform.svg)](https://travis-ci.org/ViktorBodrogi/Platform) |
 | Platform-0.1 | [![Build Status Platform/Viktor](https://travis-ci.org/ViktorBodrogi/Platform.svg?branch=Platform-0.1)](https://travis-ci.org/ViktorBodrogi/Platform) |
 | Platform/Viktor | [![Build Status Platform/Viktor](https://travis-ci.org/ViktorBodrogi/Platform.svg?branch=Platform%2FViktor)](https://travis-ci.org/ViktorBodrogi/Platform) |
 | Platform/dokuwiki | [![Build Status Platform/dokuwiki](https://travis-ci.org/ViktorBodrogi/Platform.svg?branch=Platform%2Fdokuwiki)](https://travis-ci.org/ViktorBodrogi/Platform) |
+| master | [![Build Status master](https://travis-ci.org/ViktorBodrogi/Platform.svg?branch=master)](https://travis-ci.org/ViktorBodrogi/Platform) |
