@@ -24,8 +24,8 @@ before_script:
   - sh configure.sh
 script:
   - cd dokuwiki/_test
-  - phpunit --verbose --stderr --group plugins
   - phpunit --verbose --stderr
+  - phpunit --verbose --stderr --group plugins
   #- phpunit --verbose --stderr --group plugin_include
   #- phpunit --verbose --stderr --group plugin_data
   #- phpunit --verbose --stderr --group plugin_sqlite
