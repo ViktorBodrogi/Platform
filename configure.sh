@@ -3,6 +3,8 @@
 
 echo Configuring DokuWiki Platform
 
-ln -sv lib/tpl/bootsrap3     dokuwiki/lib/tpl/
-ln -sv lib/plugins/include   dokuwiki/lib/plugins/
-ln -sv lib/plugins/sqlite    dokuwiki/lib/plugins/
+ln -sv lib/tpl/bootsrap3        dokuwiki/lib/tpl/
+
+ln -sv lib/plugins/data         dokuwiki/lib/plugins/
+ln -sv lib/plugins/include      dokuwiki/lib/plugins/
+ln -sv lib/plugins/sqlite       dokuwiki/lib/plugins/
