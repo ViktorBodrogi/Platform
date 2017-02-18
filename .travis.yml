@@ -1,0 +1,36 @@
+language: php
+sudo: false
+php:
+  #- "7.0"
+  #- "5.6"
+  - "5.4"
+  #- "hhvm"
+env:
+  - DOKUWIKI=master
+  - DOKUWIKI=stable
+  #- DISABLE_FUNCTIONS=
+  #- DISABLE_FUNCTIONS="gzopen"
+matrix:
+  allow_failures:
+    - php: "hhvm"
+notifications:
+  slack: hozong:haBs33ICo44odrx7iM01nBvg
+services:
+  - "mysql"
+  - "postgresql"
+before_script:
+  - echo "disable_functions=$DISABLE_FUNCTIONS" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - echo "extension=sqlite.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  - sh configure.sh
+script:
+  - cd dokuwiki/_test
+  - phpunit --verbose --stderr
+  - phpunit --verbose --stderr --group plugins
+  #- phpunit --verbose --stderr --group plugin_include
+  #- phpunit --verbose --stderr --group plugin_data
+  #- phpunit --verbose --stderr --group plugin_sqlite
+  #
+  #- cd ../lib/plugins
+  #- ( cd include/_test  && phpunit --verbose --stderr --group plugin_include )
+  #- ( cd sqlite/_test   && phpunit --verbose --stderr --group plugin_sqlite )
+  #- ( cd data/_test     && phpunit --verbose --stderr --group plugin_data )
