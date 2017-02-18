@@ -21,7 +21,7 @@
 
 | Branch  | Status  |
 |---|---|
-ci.org/ViktorBodrogi/Platform) |
+| ViktorBodrogi/Platform | (https://travis-ci.org/ViktorBodrogi/Platform) |
 | master | [![Build Status master](https://travis-ci.org/ViktorBodrogi/Platform.svg?branch=master)](https://travis-ci.org/ViktorBodrogi/Platform) |
 | Platform-0.1 | [![Build Status Platform/Viktor](https://travis-ci.org/ViktorBodrogi/Platform.svg?branch=Platform-0.1)](https://travis-ci.org/ViktorBodrogi/Platform) |
 | Platform/Viktor | [![Build Status Platform/Viktor](https://travis-ci.org/ViktorBodrogi/Platform.svg?branch=Platform%2FViktor)](https://travis-ci.org/ViktorBodrogi/Platform) |
