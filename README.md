@@ -8,6 +8,7 @@
 ## Plugins
 
     git submodule add https://github.com/ViktorBodrogi/dokuwiki
+    git submodule add https://github.com/ViktorBodrogi/dokuwiki-plugins
 
 ## Travis
 

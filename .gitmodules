@@ -1,3 +1,6 @@
 [submodule "dokuwiki"]
 	path = dokuwiki
 	url = https://github.com/ViktorBodrogi/dokuwiki
+[submodule "dokuwiki-plugins"]
+	path = dokuwiki-plugins
+	url = https://github.com/ViktorBodrogi/dokuwiki-plugins
