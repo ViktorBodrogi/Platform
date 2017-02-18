@@ -24,13 +24,13 @@ before_script:
   - sh configure.sh
 script:
   - cd dokuwiki/_test
-  - phpunit --verbose --stderr --group plugin_include
-  - phpunit --verbose --stderr --group plugin_data
-  - phpunit --verbose --stderr --group plugin_sqlite
-  #- cd dokuwiki/lib/plugins
+  - phpunit --verbose --stderr --group plugins
+  - phpunit --verbose --stderr
+  #- phpunit --verbose --stderr --group plugin_include
+  #- phpunit --verbose --stderr --group plugin_data
+  #- phpunit --verbose --stderr --group plugin_sqlite
+  #
+  #- cd ../lib/plugins
   #- ( cd include/_test  && phpunit --verbose --stderr --group plugin_include )
   #- ( cd sqlite/_test   && phpunit --verbose --stderr --group plugin_sqlite )
   #- ( cd data/_test     && phpunit --verbose --stderr --group plugin_data )
-  #- cd ../../_test
-  - phpunit --verbose --stderr --group plugins
-  #- phpunit --verbose --stderr
