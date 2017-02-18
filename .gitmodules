@@ -7,3 +7,9 @@
 [submodule "lib/plugins/include"]
 	path = lib/plugins/include
 	url = https://github.com/dokufreaks/plugin-include
+[submodule "lib/plugins/sqlite"]
+	path = lib/plugins/sqlite
+	url = https://github.com/cosmocode/sqlite
+[submodule "lib/plugins/data"]
+	path = lib/plugins/data
+	url = https://github.com/splitbrain/dokuwiki-plugin-data
