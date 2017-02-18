@@ -17,6 +17,16 @@ services:
   - "postgresql"
 before_script:
   - echo "disable_functions=$DISABLE_FUNCTIONS" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
-  - cp dokuwiki/_test/mysql.conf.php.dist dokuwiki/_test/mysql.conf.php
-  - cp dokuwiki/_test/pgsql.conf.php.dist dokuwiki/_test/pgsql.conf.php
-script: cd dokuwiki/_test && phpunit --verbose --stderr
+  - cp -v dokuwiki/_test/mysql.conf.php.dist        dokuwiki/_test/mysql.conf.php
+  - cp -v dokuwiki/_test/pgsql.conf.php.dist        dokuwiki/_test/pgsql.conf.php
+  - ln -sv dokuwiki-plugins/lib/plugins/include     dokuwiki/lib/plugins/
+  - ln -sv dokuwiki-plugins/lib/plugins/sqlite      dokuwiki/lib/plugins/
+  - ln -sv dokuwiki-plugins/lib/plugins/data        dokuwiki/lib/plugins/
+script:
+  - cd dokuwiki/_test
+  - phpunit --verbose --stderr
+  - phpunit --verbose --stderr --group plugins
+  - cd ..
+  - ( cd lib/plugins/include  && phpunit --verbose --stderr --group plugin_include )
+  - ( cd lib/plugins/sqlite   && phpunit --verbose --stderr --group plugin_sqlite )
+  - ( cd lib/plugins/data     && phpunit --verbose --stderr --group plugin_data )
