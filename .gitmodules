@@ -1,0 +1,18 @@
+[submodule "dokuwiki"]
+	path = dokuwiki
+	url = https://github.com/ViktorBodrogi/dokuwiki
+[submodule "dokuwiki-plugins"]
+	path = dokuwiki-plugins
+	url = https://github.com/ViktorBodrogi/dokuwiki-plugins
+[submodule "lib/tpl/bootstrap3"]
+	path = lib/tpl/bootstrap3
+	url = https://github.com/LotarProject/dokuwiki-template-bootstrap3
+[submodule "lib/plugins/include"]
+	path = lib/plugins/include
+	url = https://github.com/dokufreaks/plugin-include
+[submodule "lib/plugins/sqlite"]
+	path = lib/plugins/sqlite
+	url = https://github.com/cosmocode/sqlite
+[submodule "lib/plugins/data"]
+	path = lib/plugins/data
+	url = https://github.com/splitbrain/dokuwiki-plugin-data
