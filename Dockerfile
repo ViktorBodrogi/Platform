@@ -14,8 +14,8 @@ RUN apt-get install -y git
 EXPOSE 80
 
 ENV Platform /usr/local/src/Platform
-ENV DW      /var/www/html/
 
+ENV DW      /var/www/html
 ENV Data    $DW/data
 ENV Conf    $DW/conf
 
@@ -41,20 +41,30 @@ RUN cp -a $Platform/dokuwiki-plugins/lib/plugins/* $DW/lib/plugins/
 #COPY dokuwiki-plugins/lib/plugins/ $DW/lib/plugins/
 
 ### DW Cleanup
-RUN rm $DW/install.php $DW/composer.* $DW/COPYING $DW/README
+RUN rm $DW/composer.* $DW/COPYING $DW/README
 
 
 ### Conf
 
+#ADD conf/local.php.dist $Conf/local.php
+#ADD conf/htacess.dist $DW/local.php
+#RUN rm $DW/install.php
+
 RUN chown www-data $Conf
+
 
 ### Data
 
 RUN chown www-data $Data $Data/*
 RUN chown www-data -R $Data/*/wiki
 
+# Cleanup pages
+RUN rm -fr -R $Data/pages/wiki
 
-### Final DW
+
+## Final DW
+### Status
+RUN cd $Platform && git status && git submodule status
 RUN ls -l $DW/
 
 # CMD pwd && ls -l && ls -la /tmp
