@@ -1,7 +1,7 @@
+FROM alpine:3.4
 MAINTAINER Viktor Bodrogi <viktor@axonnet.hu>
 
 # Alpine
-FROM alpine:3.4
 RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ add \
     git
 #    php7 php7-fpm php7-gd php7-session php7-xml \
