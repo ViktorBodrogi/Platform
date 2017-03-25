@@ -1,0 +1,16 @@
+
+FROM axonnet/platform:dw
+MAINTAINER Viktor Bodrogi <viktor@axonnet.hu>
+
+### Conf
+ADD conf/local.php.dist $Conf/local.php
+RUN rm $DW/install.php
+#ADD conf/htaccess.dist $DW/.htaccess
+
+RUN chown www-data $Conf/local.php
+
+### Final DW
+### Status
+RUN cd $Platform && git status && git submodule status
+RUN ls -la $Platform $Conf $DW
+RUN pwd

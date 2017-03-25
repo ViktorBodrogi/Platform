@@ -1,0 +1,46 @@
+
+FROM php:5.6-apache
+MAINTAINER Viktor Bodrogi <viktor@axonnet.hu>
+
+## Ubuntu
+RUN apt-get update 
+RUN apt-get install -y git
+
+## Source
+
+### Configure
+
+EXPOSE 80
+
+ENV Platform /usr/local/src/Platform
+ENV DW      /var/www/html
+
+ENV Data    $DW/data
+ENV Conf    $DW/conf
+
+#RUN sh configure.sh
+
+### Local
+
+COPY .git /tmp/Platform.git
+RUN git clone --recursive /tmp/Platform.git $Platform
+RUN cd $Platform && git status && git submodule status
+
+#FROM axonnet/platform:dw
+
+### Conf
+#COPY $Platform/conf/local.php.dist $Conf/local.php
+#ADD conf/local.php.dist $Conf/local.php
+#ADD conf/htaccess.dist $DW/.htaccess
+
+#RUN rm $DW/install.php
+#RUN chown www-data $Conf
+
+### Data
+#RUN chown www-data $Data $Data/*
+#RUN chown www-data -R $Data/*/wiki
+
+### Final DW
+### Status
+RUN cd $Platform && git status && git submodule status
+RUN ls -la $DW/

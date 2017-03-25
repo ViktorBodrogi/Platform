@@ -1,0 +1,13 @@
+<?php
+/**
+ * Platform local configuration
+ */
+
+$conf['title']          = 'Platform';
+$conf['useacl']         = 1;
+$conf['userewrite']     = 1;
+$conf['disableactions'] = 'index';
+
+#$conf['plugin']['bootswrapper']['loadbootstrap'] = 1;
+
+$conf['superuser']  = 'super';
