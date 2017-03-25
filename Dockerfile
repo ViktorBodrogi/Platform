@@ -1,13 +1,24 @@
-FROM php:5.6-apache
+MAINTAINER Viktor Bodrogi <viktor@axonnet.hu>
 
-RUN apt-get update 
-RUN apt-get install -y git
+# Alpine
+FROM alpine:3.4
+RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ add \
+    git
+#    php7 php7-fpm php7-gd php7-session php7-xml \
+#    nginx supervisor curl tar \
 
-#RUN sh configure.sh
+# Ubuntu
+#FROM php:5.6-apache
+#RUN apt-get update 
+#RUN apt-get install -y git
+
+### Platform
 
 ENV Platform /usr/local/src/Platform
 ENV Html /var/www/html/
+#RUN sh configure.sh
 
+## Source
 COPY .git /tmp/Platform.git
 RUN git clone --recursive /tmp/Platform.git $Platform
 RUN cd $Platform && git status && git submodule status
@@ -17,11 +28,13 @@ RUN cd $Platform && git status && git submodule status
 #COPY dokuwiki/ $Html/
 #COPY dokuwiki-plugins/lib/plugins/ $Html/lib/plugins/
 
+## DokuWiki
 # Copy DokuWiki files
 RUN cp -a $Platform/dokuwiki/* $Html/
 RUN ls -l $Html/
 RUN cp -a $Platform/dokuwiki-plugins/lib/plugins/* $Html/lib/plugins/
 
+## Data & Conf
 RUN chown www-data \
     $Html/conf \
     $Html/data \
