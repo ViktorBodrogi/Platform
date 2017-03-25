@@ -20,13 +20,29 @@
 
 ...and more...
 
+
 ## Docker
 
-Docker images:
+### Hub images
 
 * axonnet/platform:latest
 * https://hub.docker.com/r/axonnet/platform/
+* https://cloud.docker.com/swarm/axonnet/repository/docker/axonnet/platform/general
 
+### Build
+
+    docker build -t axonnet/platform:local .
+    docker build -t axonnet/platform:latest .
+
+    docker push axonnet/platform:latest
+
+### Run
+
+    docker run -Pd axonnet/platform:local
+
+    docker run -P axonnet/platform:latest
+    docker run -t axonnet/platform:latest
+    
 ## Travis
 
 https://travis-ci.org/ViktorBodrogi
