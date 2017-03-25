@@ -25,4 +25,4 @@ before_script:
 script:
   - cd dokuwiki/_test
   - phpunit --verbose --stderr
-  - phpunit --verbose --stderr --group plugins
+  #- phpunit --verbose --stderr --group plugins
