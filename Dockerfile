@@ -1,11 +1,14 @@
-FROM alpine:3.4
+FROM alpine:3.3
 MAINTAINER Viktor Bodrogi <viktor@axonnet.hu>
 
 # Alpine
 RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ add \
-    git
+    git \
+    nginx supervisor curl tar \
+    php
+#    php5 php5-fpm php5-gd php5-session php5-xml \
+#FROM alpine:3.6
 #    php7 php7-fpm php7-gd php7-session php7-xml \
-#    nginx supervisor curl tar \
 
 # Ubuntu
 #FROM php:5.6-apache
