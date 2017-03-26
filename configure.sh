@@ -1,11 +1,11 @@
 #!/bin/sh
 # Configuration script for DokuWiki Platform
 
+echo === master-0.1.1
 echo === Configuring DokuWiki ===
 
 cp -v dokuwiki/_test/mysql.conf.php.dist        dokuwiki/_test/mysql.conf.php
 cp -v dokuwiki/_test/pgsql.conf.php.dist        dokuwiki/_test/pgsql.conf.php
-
 
 echo === Copy/link Plugins ===
 
@@ -47,4 +47,3 @@ rm -fr dokuwiki/lib/plugins/tag/_test/topic_and_tagrefine.test.php
 
 # BUG: Fails with PHP 5.4
 #rm -fr dokuwiki/_test/tests/inc/httpclient_http_proxy.test.php
-

@@ -7,7 +7,7 @@ php:
   - "hhvm"
 env:
   - DOKUWIKI=master
-  - DOKUWIKI=stable
+  #- DOKUWIKI=stable
   #- DISABLE_FUNCTIONS=
   #- DISABLE_FUNCTIONS="gzopen"
 matrix:
