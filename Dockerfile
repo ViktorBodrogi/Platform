@@ -1,12 +1,11 @@
 
-FROM php:5.6-apache
+FROM axonnet/platform:src
+#FROM php:5.6-apache
 MAINTAINER Viktor Bodrogi <viktor@axonnet.hu>
 
 ## Ubuntu
-RUN apt-get update 
-RUN apt-get install -y git
-
-## Source
+#RUN apt-get update 
+#RUN apt-get install -y git
 
 
 ### Configure
@@ -14,7 +13,6 @@ RUN apt-get install -y git
 EXPOSE 80
 
 ENV Platform /usr/local/src/Platform
-
 ENV DW      /var/www/html
 ENV Data    $DW/data
 ENV Conf    $DW/conf
@@ -22,11 +20,14 @@ ENV Conf    $DW/conf
 #RUN sh configure.sh
 
 
-### Local
 
-COPY .git /tmp/Platform.git
-RUN git clone --recursive /tmp/Platform.git $Platform
-RUN cd $Platform && git status && git submodule status
+## Source
+### Local
+#FROM axonnet/platform:src
+#COPY .git /tmp/Platform.git
+#RUN git clone --recursive /tmp/Platform.git $Platform
+#RUN cd $Platform && git status && git submodule status
+
 
 
 ### DokuWiki & Plugins
@@ -48,9 +49,9 @@ RUN rm $DW/composer.* $DW/COPYING $DW/README
 
 #ADD conf/local.php.dist $Conf/local.php
 #ADD conf/htacess.dist $DW/local.php
-#RUN rm $DW/install.php
 
 RUN chown www-data $Conf
+#RUN rm $DW/install.php
 
 
 ### Data

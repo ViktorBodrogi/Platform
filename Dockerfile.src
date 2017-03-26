@@ -33,8 +33,8 @@ RUN cd $Platform && git status && git submodule status
 #ADD conf/local.php.dist $Conf/local.php
 #ADD conf/htaccess.dist $DW/.htaccess
 
-#RUN rm $DW/install.php
 #RUN chown www-data $Conf
+#RUN rm $DW/install.php
 
 ### Data
 #RUN chown www-data $Data $Data/*
