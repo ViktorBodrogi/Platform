@@ -22,11 +22,29 @@
 
 ## Docker
 
-Docker images:
+### Hub images
 
 * axonnet/platform:latest
 * https://hub.docker.com/r/axonnet/platform/
+* https://cloud.docker.com/swarm/axonnet/repository/docker/axonnet/platform/general
 
+### Build
+
+    docker build -t axonnet/platform:latest .
+    docker build -t axonnet/platform:local .
+    docker build -t axonnet/platform:src -f Dockerfile.src .
+
+Push:
+
+    docker push axonnet/platform:latest
+
+### Run
+
+    docker run -Pd axonnet/platform:latest
+
+    docker run -Pd axonnet/platform:local
+    docker run -Pd axonnet/platform:dev
+    
 ## Travis
 
 https://travis-ci.org/ViktorBodrogi
@@ -47,6 +65,7 @@ https://travis-ci.org/ViktorBodrogi
 
 ## Version
 
-* master-0.1
 * Platform-0.1
+* master-0.1.1
 * Plugins-0.1
+* Plugins/0.1.2/master 20170326a
